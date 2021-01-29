@@ -13,6 +13,8 @@ App bar widget comes inside a scaffold widget, it has various properties, most c
 9. flexibleSpace: Which takes a widget as input, and this works as one of the stack widget to appbar, this will also render above the appbar in same location from top left. see "Hello world" text for better understanding.
 
 ### Bottom Navigation Bar
+[![Screenshot-2021-01-29-at-1-56-08-PM.png](https://i.postimg.cc/C5Z0bGcJ/Screenshot-2021-01-29-at-1-56-08-PM.png)](https://postimg.cc/fSh1N9n0)
+
 This will take any widget as input, mostly used for tab based applications. How ever if you want to place a widget at the bottom of screen and it needs to present every time irrespective of scroll, then you can use this widget. Most used widget for this is; BottomNavigationBar widget, which will have items property and will take more than 2 BottomNavigationBarItem widgets as input, and basically works like a tab bar. Please check the code once. As this is works like a tab bar, we will have different properties like, selected item color, unselected item color, selected label font etc..
 
 ### BottomSheet
