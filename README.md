@@ -26,6 +26,8 @@ Basically showModalBottomSheet takes a builder widget, means we can render any t
 
 ### ButtonBar
 As the name itself indicates, this is a bar of buttons widget. Works like a list of buttons, the default alignment is row type, once the space is runs out, then it works like column, laying out the widgets vertically.
+[![Screenshot-2021-01-29-at-3-46-49-PM.png](https://i.postimg.cc/pTKQkD82/Screenshot-2021-01-29-at-3-46-49-PM.png)](https://postimg.cc/YGqmCLbV)
+[![Screenshot-2021-01-29-at-3-47-12-PM.png](https://i.postimg.cc/mZwCDZy6/Screenshot-2021-01-29-at-3-47-12-PM.png)](https://postimg.cc/7b5ftkcg)
 
 --
  
