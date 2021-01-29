@@ -10,7 +10,10 @@ App bar widget comes inside a scaffold widget, it has various properties, most c
 6. elevation: Is a z-index input and determines the elevation of appbar with respect to body widget
 7. leadingWidth: Takes double as input and determines width of leading widget
 8. primary: Takes bool as input and by default it is true, if it false, then appbar becomes a normal widget and starts from top as a normal container widget for ex.
-9. flexibleSpace: Which takes a widget as input, and this works as one of the stack widget to appbar, this will also render above the appbar in same location from top left. see "Hello world" text for better understanding. 
+9. flexibleSpace: Which takes a widget as input, and this works as one of the stack widget to appbar, this will also render above the appbar in same location from top left. see "Hello world" text for better understanding.
+
+### Bottom Navigation Bar
+This will take any widget as input, mostly used for tab based applications. How ever if you want to place a widget at the bottom of screen and it needs to present every time irrespective of scroll, then you can use this widget. Most used widget for this is BottomNavigationBar widget, which will have items property and will take more than 2 BottomNavigationBarItem widgets as input, and basically works like a tab bar. Please check the code once.
 
 --
  

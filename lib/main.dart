@@ -20,7 +20,44 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _pageWidgets = <Widget>[
+    Text(
+      'Home Widget',
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    Text(
+      'Info Widget',
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    Text(
+      'Menu Widget',
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ];
+
+  void _onTabItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +69,7 @@ class MyHomePage extends StatelessWidget {
         flexibleSpace: Container(
           child: Text(
             "Hello world",
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 65),
           ),
         ), // flexibleSpace is a stacked widget in appbar, this will also display some widget, along with appbar
         leading: Padding(
@@ -66,11 +103,34 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+      // bottomNavigationBar: Container(
+      //   height: 50,
+      //   color: Colors.orange,
+      // ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label: "Info"),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu"),
+        ],
+        selectedItemColor: Colors.orangeAccent,
+        currentIndex: _selectedIndex,
+        onTap: (int index) {
+          _onTabItemTapped(index);
+        },
+      ),
       body: SingleChildScrollView(
-        child: Container(
-          width: 100,
-          height: 100,
-          color: Colors.green[50],
+        child: Column(
+          children: [
+            Center(
+              child: Container(
+                width: 300,
+                height: 300,
+                color: Colors.green[50],
+                child: _pageWidgets.elementAt(_selectedIndex),
+              ),
+            ),
+          ],
         ),
       ),
     );
