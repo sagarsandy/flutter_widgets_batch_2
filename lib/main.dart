@@ -27,6 +27,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   static const List<Widget> _pageWidgets = <Widget>[
     Text(
@@ -58,9 +59,32 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void displayBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: Colors.purple[50],
+        enableDrag: true,
+        builder: (ctx) {
+          return new Container(
+            height: 150.0,
+            color: Color(0xFF737373),
+            child: new Container(
+                decoration: new BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.only(
+                        topLeft: const Radius.circular(40.0),
+                        topRight: const Radius.circular(40.0))),
+                child: new Center(
+                  child: new Text("This is a modal sheet"),
+                )),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         centerTitle: true,
@@ -78,7 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           child: IconButton(
             icon: Icon(Icons.ac_unit),
-            onPressed: () => print("Leading button pressed"),
+            onPressed: () {
+              scaffoldKey.currentState.showBottomSheet((context) => Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width,
+                    child: Center(child: Text("Loading")),
+                    color: Colors.cyan[50],
+                  ));
+            },
           ),
         ),
         leadingWidth: 40, // How much width should the leading widget occupy
@@ -99,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           IconButton(
             icon: Icon(Icons.apps),
-            onPressed: () => print("Apps button pressed"),
+            onPressed: () => displayBottomSheet(context),
           ),
         ],
       ),
