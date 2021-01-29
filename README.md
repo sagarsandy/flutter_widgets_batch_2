@@ -1,7 +1,7 @@
 # Flutter: Working with widgets batch two
 ### App Bar
 App bar widget comes inside a scaffold widget, it has various properties, most commonly used are
-![alt text](https://ibb.co/QFjJMfg)
+[![Screenshot-2021-01-29-at-12-14-55-PM.png](https://i.postimg.cc/dQh5JR9k/Screenshot-2021-01-29-at-12-14-55-PM.png)](https://postimg.cc/LhMtT1w2)
 1. title: Which takes a text wodget as input and will display the title of appbar
 2. leading: Which takes any kind of widget as input, mostly people use icon buttons here
 3. actions: Which takes multiple widgets as children, mostly people use icon buttons here
