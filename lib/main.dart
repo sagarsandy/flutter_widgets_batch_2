@@ -108,6 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
       //   color: Colors.orange,
       // ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 5,
+        backgroundColor: Colors.cyan,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.info), label: "Info"),
@@ -125,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Center(
               child: Container(
                 width: 300,
-                height: 300,
+                height: 3200,
                 color: Colors.green[50],
                 child: _pageWidgets.elementAt(_selectedIndex),
               ),
