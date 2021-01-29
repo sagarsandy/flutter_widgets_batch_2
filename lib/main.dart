@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,17 +66,54 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.purple[50],
         enableDrag: true,
         builder: (ctx) {
-          return new Container(
-            height: 150.0,
+          return Container(
+            height: 350.0,
             color: Color(0xFF737373),
-            child: new Container(
-                decoration: new BoxDecoration(
+            child: Container(
+                decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: new BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                         topLeft: const Radius.circular(40.0),
                         topRight: const Radius.circular(40.0))),
-                child: new Center(
-                  child: new Text("This is a modal sheet"),
+                child: Column(
+                  children: [
+                    ButtonBar(
+                      buttonHeight: 60,
+                      buttonMinWidth: 100,
+                      overflowDirection: VerticalDirection.down,
+                      alignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                          child: Text('Text Button'),
+                          onPressed: () {
+                            print("Text Button");
+                          },
+                        ),
+                        RaisedButton(
+                          onPressed: () {
+                            print("Raised Button");
+                          },
+                          child: Text("Raised Button"),
+                        ),
+                        FlatButton(
+                          onPressed: () {
+                            print("Flat Button");
+                          },
+                          child: Text("Flat Button"),
+                        ),
+                        Text("Hello World"),
+                        FlatButton(
+                          onPressed: () {
+                            print("Flat Button");
+                          },
+                          child: Text("Flat Button"),
+                        ),
+                      ],
+                    ),
+                    Center(
+                      child: Text("This is a modal sheet"),
+                    ),
+                  ],
                 )),
           );
         });
