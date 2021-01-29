@@ -20,6 +20,7 @@ This will take any widget as input, mostly used for tab based applications. How 
 ### BottomSheet
 1. [![Screenshot-2021-01-29-at-3-19-53-PM.png](https://i.postimg.cc/fL8P5fZG/Screenshot-2021-01-29-at-3-19-53-PM.png)](https://postimg.cc/WFJS1rd8)
 2. [![Screenshot-2021-01-29-at-3-20-08-PM.png](https://i.postimg.cc/K87JJDD0/Screenshot-2021-01-29-at-3-20-08-PM.png)](https://postimg.cc/jD5HjN9f)
+
 Which can be used to show some info, or to perform some user interaction. There are two types of bottom sheets, one fo them is comes directly from the bottom of the screen. This will hide anything behind this widget. Another one is scaffoldStateShowBottomSheet, which comes after the bottom navigation bar. Means, it will comes above the bottom navigation bar.
 Basically showModalBottomSheet takes a builder widget, means we can render any type of widgets in that. Which can be buttons, forms, etc..
 
